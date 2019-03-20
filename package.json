@@ -3,21 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "parcel-bundler": "^1.12.2",
-    "react": "^16.8.1",
-    "react-dom": "^16.8.1"
+    "parcel-bundler": "^1.10.3",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3"
   },
-  "scripts": {},
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Darkness4ever/PortfolioApp.git"
-  },
-  "author": "AKM",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Darkness4ever/PortfolioApp/issues"
-  },
-  "homepage": "https://github.com/Darkness4ever/PortfolioApp#readme"
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html",
+    "start": "npm run build && live-server dist"
+  }
 }
