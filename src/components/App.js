@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import Projects from "./Projects"
 import Socials from "./Socials"
-import profile from './assets/profile.jpeg'
+import profile from '../assets/profile.jpeg'
+import Title from './Title'
 class App extends Component {
 
     state = { displayBio: false }
-    
+
     toggleBio = () => {
         this.setState({ displayBio: !this.state.displayBio })
     }
@@ -14,7 +15,9 @@ class App extends Component {
             <div >
                 <img src={profile} alt='profile' className="profile" />
                 <h1>Hello</h1>
-                <p>My name is Ankit. I am a software Engineer</p>
+                <p>My name is Ankit.</p>
+                {/* {this.state.displayBio ? <Title /> : null} */}
+                <Title />
                 <p>I am always looking forward to learn new things</p>
                 {this.state.displayBio ? (<div>
                     <p>I live in Hyderabad, India</p>

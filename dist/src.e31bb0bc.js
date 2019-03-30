@@ -25747,7 +25747,7 @@ var PROJECTS = [{
 }];
 var _default = PROJECTS;
 exports.default = _default;
-},{"../assets/project1.png":"assets/project1.png","../assets/project2.png":"assets/project2.png","../assets/project3.png":"assets/project3.png"}],"Projects.jsx":[function(require,module,exports) {
+},{"../assets/project1.png":"assets/project1.png","../assets/project2.png":"assets/project2.png","../assets/project3.png":"assets/project3.png"}],"components/Projects.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -25755,102 +25755,48 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _react = _interopRequireWildcard(require("react"));
+var _react = _interopRequireDefault(require("react"));
 
-var _projects = _interopRequireDefault(require("./data/projects"));
+var _projects = _interopRequireDefault(require("../data/projects"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
-
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-var Project =
-/*#__PURE__*/
-function (_Component) {
-  _inherits(Project, _Component);
-
-  function Project() {
-    _classCallCheck(this, Project);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(Project).apply(this, arguments));
-  }
-
-  _createClass(Project, [{
-    key: "render",
-    value: function render() {
-      var _this$props$project = this.props.project,
-          title = _this$props$project.title,
-          description = _this$props$project.description,
-          link = _this$props$project.link,
-          image = _this$props$project.image;
-      return _react.default.createElement("div", {
-        style: {
-          display: 'inline-block',
-          width: 300,
-          margin: 10
-        }
-      }, _react.default.createElement("h3", null, title), _react.default.createElement("img", {
-        src: image,
-        alt: "profile",
-        style: {
-          width: 200,
-          height: 120
-        }
-      }), _react.default.createElement("p", null, description), _react.default.createElement("a", {
-        href: link
-      }, link));
+var Project = function Project(props) {
+  var _props$project = props.project,
+      title = _props$project.title,
+      description = _props$project.description,
+      link = _props$project.link,
+      image = _props$project.image;
+  return _react.default.createElement("div", {
+    style: {
+      display: 'inline-block',
+      width: 300,
+      margin: 10
     }
-  }]);
-
-  return Project;
-}(_react.Component);
-
-var Projects =
-/*#__PURE__*/
-function (_Component2) {
-  _inherits(Projects, _Component2);
-
-  function Projects() {
-    _classCallCheck(this, Projects);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(Projects).apply(this, arguments));
-  }
-
-  _createClass(Projects, [{
-    key: "render",
-    value: function render() {
-      return _react.default.createElement("div", null, _react.default.createElement("h2", null, "Highlighted Projects"), _react.default.createElement("div", null, _projects.default.map(function (PROJECT) {
-        return _react.default.createElement(Project, {
-          key: PROJECT.id,
-          project: PROJECT
-        });
-      })));
+  }, _react.default.createElement("h3", null, title), _react.default.createElement("img", {
+    src: image,
+    alt: "profile",
+    style: {
+      width: 200,
+      height: 120
     }
-  }]);
+  }), _react.default.createElement("p", null, description), _react.default.createElement("a", {
+    href: link
+  }, link));
+};
 
-  return Projects;
-}(_react.Component);
+var Projects = function Projects() {
+  return _react.default.createElement("div", null, _react.default.createElement("h2", null, "Highlighted Projects"), _react.default.createElement("div", null, _projects.default.map(function (PROJECT) {
+    return _react.default.createElement(Project, {
+      key: PROJECT.id,
+      project: PROJECT
+    });
+  })));
+};
 
 var _default = Projects;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","./data/projects":"data/projects.js"}],"assets/githubIcon.png":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","../data/projects":"data/projects.js"}],"assets/githubIcon.png":[function(require,module,exports) {
 module.exports = "/githubIcon.da55b9b7.png";
 },{}],"assets/emailIcon.png":[function(require,module,exports) {
 module.exports = "/emailIcon.ddc5681f.png";
@@ -25895,7 +25841,55 @@ var SOCIALS = [{
 }];
 var _default = SOCIALS;
 exports.default = _default;
-},{"../assets/githubIcon.png":"assets/githubIcon.png","../assets/emailIcon.png":"assets/emailIcon.png","../assets/linkedinIcon.png":"assets/linkedinIcon.png","../assets/twitter_icon.png":"assets/twitter_icon.png"}],"Socials.jsx":[function(require,module,exports) {
+},{"../assets/githubIcon.png":"assets/githubIcon.png","../assets/emailIcon.png":"assets/emailIcon.png","../assets/linkedinIcon.png":"assets/linkedinIcon.png","../assets/twitter_icon.png":"assets/twitter_icon.png"}],"components/Socials.jsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _social = _interopRequireDefault(require("../data/social"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Social = function Social(props) {
+  var _props$social = props.social,
+      link = _props$social.link,
+      image = _props$social.image;
+  return _react.default.createElement("div", {
+    style: {
+      display: 'inline-block',
+      margin: 10
+    }
+  }, _react.default.createElement("a", {
+    href: link
+  }, _react.default.createElement("img", {
+    src: image,
+    alt: "profile",
+    style: {
+      height: 42,
+      width: 42
+    }
+  })));
+};
+
+var Socials = function Socials() {
+  return _react.default.createElement("div", null, _react.default.createElement("h2", null, "Connect with me !!"), _react.default.createElement("div", null, _social.default.map(function (SOCIAL) {
+    return _react.default.createElement(Social, {
+      key: Social.id,
+      social: SOCIAL
+    });
+  })));
+};
+
+var _default = Socials;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js","../data/social":"data/social.js"}],"assets/profile.jpeg":[function(require,module,exports) {
+module.exports = "/profile.157bb0a7.jpeg";
+},{}],"components/Title.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -25904,10 +25898,6 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
-
-var _social = _interopRequireDefault(require("./data/social"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
@@ -25921,84 +25911,98 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-var Social =
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var TITLES = ['a software engineer', 'a guitarist', 'an avid learner', 'a music lover'];
+
+var Title =
 /*#__PURE__*/
 function (_Component) {
-  _inherits(Social, _Component);
+  _inherits(Title, _Component);
 
-  function Social() {
-    _classCallCheck(this, Social);
+  function Title() {
+    var _getPrototypeOf2;
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Social).apply(this, arguments));
-  }
+    var _this;
 
-  _createClass(Social, [{
-    key: "render",
-    value: function render() {
-      var _this$props$social = this.props.social,
-          link = _this$props$social.link,
-          image = _this$props$social.image;
-      console.log(this.props);
-      return _react.default.createElement("div", {
-        style: {
-          display: 'inline-block',
-          margin: 10
-        }
-      }, _react.default.createElement("a", {
-        href: link
-      }, _react.default.createElement("img", {
-        src: image,
-        alt: "profile",
-        style: {
-          height: 42,
-          width: 42
-        }
-      })));
+    _classCallCheck(this, Title);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
     }
-  }]);
 
-  return Social;
-}(_react.Component);
+    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Title)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
-var Socials =
-/*#__PURE__*/
-function (_Component2) {
-  _inherits(Socials, _Component2);
+    _defineProperty(_assertThisInitialized(_this), "state", {
+      titleIndex: 0,
+      fadeIn: true
+    });
 
-  function Socials() {
-    _classCallCheck(this, Socials);
+    _defineProperty(_assertThisInitialized(_this), "animateTitle", function () {
+      _this.titleInterval = setInterval(function () {
+        var titleIndex = (_this.state.titleIndex + 1) % TITLES.length;
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Socials).apply(this, arguments));
-  }
-
-  _createClass(Socials, [{
-    key: "render",
-    value: function render() {
-      return _react.default.createElement("div", null, _react.default.createElement("h2", null, "Connect with me !!"), _react.default.createElement("div", null, _social.default.map(function (SOCIAL) {
-        return _react.default.createElement(Social, {
-          key: Social.id,
-          social: SOCIAL
+        _this.setState({
+          titleIndex: titleIndex,
+          fadeIn: true
         });
-      })));
+
+        _this.timeOut = setTimeout(function () {
+          return _this.setState({
+            fadeIn: false
+          });
+        }, 2000);
+      }, 4000);
+    });
+
+    return _this;
+  }
+
+  _createClass(Title, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      this.timeOut = setTimeout(function () {
+        return _this2.setState({
+          fadeIn: false
+        });
+      }, 2000);
+      this.animateTitle();
+    }
+  }, {
+    key: "componentWillMount",
+    value: function componentWillMount() {
+      clearInterval(this.titleInterval);
+      clearInterval(this.timeOut);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this$state = this.state,
+          fadeIn = _this$state.fadeIn,
+          titleIndex = _this$state.titleIndex;
+      var title = TITLES[titleIndex];
+      return _react.default.createElement("p", {
+        className: fadeIn ? 'title-fade-in' : 'title-fade-out'
+      }, "I am ", title);
     }
   }]);
 
-  return Socials;
+  return Title;
 }(_react.Component);
 
-var _default = Socials;
+var _default = Title;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","./data/social":"data/social.js"}],"assets/profile.jpeg":[function(require,module,exports) {
-module.exports = "/profile.157bb0a7.jpeg";
-},{}],"App.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js"}],"components/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -26012,7 +26016,9 @@ var _Projects = _interopRequireDefault(require("./Projects"));
 
 var _Socials = _interopRequireDefault(require("./Socials"));
 
-var _profile = _interopRequireDefault(require("./assets/profile.jpeg"));
+var _profile = _interopRequireDefault(require("../assets/profile.jpeg"));
+
+var _Title = _interopRequireDefault(require("./Title"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -26076,7 +26082,7 @@ function (_Component) {
         src: _profile.default,
         alt: "profile",
         className: "profile"
-      }), _react.default.createElement("h1", null, "Hello"), _react.default.createElement("p", null, "My name is Ankit. I am a software Engineer"), _react.default.createElement("p", null, "I am always looking forward to learn new things"), this.state.displayBio ? _react.default.createElement("div", null, _react.default.createElement("p", null, "I live in Hyderabad, India"), _react.default.createElement("p", null, "I am learnig React Js"), _react.default.createElement("p", null, "My hobbies include playing guitar "), _react.default.createElement("button", {
+      }), _react.default.createElement("h1", null, "Hello"), _react.default.createElement("p", null, "My name is Ankit."), _react.default.createElement(_Title.default, null), _react.default.createElement("p", null, "I am always looking forward to learn new things"), this.state.displayBio ? _react.default.createElement("div", null, _react.default.createElement("p", null, "I live in Hyderabad, India"), _react.default.createElement("p", null, "I am learnig React Js"), _react.default.createElement("p", null, "My hobbies include playing guitar "), _react.default.createElement("button", {
         onClick: this.toggleBio
       }, "Show Less")) : _react.default.createElement("div", null, _react.default.createElement("button", {
         onClick: this.toggleBio
@@ -26089,7 +26095,7 @@ function (_Component) {
 
 var _default = App;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","./Projects":"Projects.jsx","./Socials":"Socials.jsx","./assets/profile.jpeg":"assets/profile.jpeg"}],"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./Projects":"components/Projects.jsx","./Socials":"components/Socials.jsx","../assets/profile.jpeg":"assets/profile.jpeg","./Title":"components/Title.js"}],"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -26168,14 +26174,14 @@ var _react = _interopRequireDefault(require("react"));
 
 var _reactDom = _interopRequireDefault(require("react-dom"));
 
-var _App = _interopRequireDefault(require("./App"));
+var _App = _interopRequireDefault(require("./components/App"));
 
 require("./index.css");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 _reactDom.default.render(_react.default.createElement(_App.default, null), document.getElementById('root'));
-},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","./App":"App.js","./index.css":"index.css"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","./components/App":"components/App.js","./index.css":"index.css"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -26203,7 +26209,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54661" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50873" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
